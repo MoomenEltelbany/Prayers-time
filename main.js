@@ -83,7 +83,7 @@ submitBtn.onclick = () => {
 function fetchPrayer(city = "Cairo", country = "Egypt") {
     // Fetching the URL
     fetch(
-        `http://api.aladhan.com/v1/calendarByCity?city=${city}&country=${country}&method=5&month=05&year=2017`
+        `https://api.aladhan.com/v1/calendarByCity?city=${city}&country=${country}&method=5&month=05&year=2017`
     )
         // Extracting the object from the response
         .then((response) => response.json())
