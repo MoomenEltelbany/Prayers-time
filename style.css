@@ -8,8 +8,25 @@ body {
     font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
 .container {
-    width: 1200px;
     background-color: #2196f3;
     color: rgb(226, 226, 226);
     margin: 50px auto;
@@ -58,6 +75,18 @@ body {
     color: #038ef4;
 }
 
+@media (max-width: 1200px) {
+    .container .prayer-title {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .container .prayer-info input {
+        max-width: 100%;
+    }
+}
+
 .container .prayer-info input:focus {
     outline: none;
 }
@@ -80,15 +109,13 @@ body {
     color: white;
 }
 .prayer-time-container {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
 }
 
 .prayer-time-container .prayer-time {
     text-align: center;
-    flex: 1;
     background-color: #038ef4;
     color: white;
     padding: 30px;

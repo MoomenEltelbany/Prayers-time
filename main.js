@@ -73,10 +73,10 @@ function showdata() {
 
 // The function that we will be executed once we click on the submit button
 submitBtn.onclick = () => {
-    // Here we will fetch the URL of the prayer time, the link needs two parameters at least which are the city and country names
-    fetchPrayer(prayerInput.value, countryName.value);
     // Once we fetch the data, we show the data based on the json data that is returned
     showdata();
+    // Here we will fetch the URL of the prayer time, the link needs two parameters at least which are the city and country names
+    fetchPrayer(prayerInput.value, countryName.value);
 };
 
 // The function of fetching the data from the URL and accepting the two parameters, with also default values in case if nothing was inserted
@@ -101,7 +101,6 @@ function fetchPrayer(city = "Cairo", country = "Egypt") {
         })
         // In case of error, we just show a message for the user that we can't get the location inserted and for him to put the correct one
         .catch((error) => {
-            errorMSG.style.color = "red";
-            errorMSG.innerHTML = `Sorry, Can't read this value (${prayerInput.value})`;
+            window.alert(`Sorry, Can't read this value (${prayerInput.value})`);
         });
 }
