@@ -30,6 +30,8 @@ let monthsArray = [
 // To treat the date
 let now = new Date();
 
+console.log();
+
 // The city input of the user
 let prayerInput = document.querySelector("input");
 // The country Input of the user
@@ -83,7 +85,9 @@ submitBtn.onclick = () => {
 function fetchPrayer(city = "Cairo", country = "Egypt") {
     // Fetching the URL
     fetch(
-        `https://api.aladhan.com/v1/calendarByCity?city=${city}&country=${country}&method=5&month=05&year=2017`
+        `https://api.aladhan.com/v1/calendarByCity?city=${city}&country=${country}&method=5&month=${
+            monthsArray[now.getMonth()]
+        }&year=${now.getFullYear()}`
     )
         // Extracting the object from the response
         .then((response) => response.json())
