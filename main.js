@@ -30,8 +30,6 @@ let monthsArray = [
 // To treat the date
 let now = new Date();
 
-console.log();
-
 // The city input of the user
 let prayerInput = document.querySelector("input");
 // The country Input of the user
